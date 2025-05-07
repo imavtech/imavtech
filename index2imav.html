@@ -12,17 +12,17 @@
             color: #0A2342;
         }
         header {
-            background-color: #0A2342;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
+    background-color: #0A2342;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Asigurăm că toate elementele sunt aliniate pe axa verticală */
+    padding: 1rem 2rem;
+}
         .logo {
             font-weight: bold;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
+            font-size: 0rem;
+            letter-spacing: 0px;
         }
         nav a {
             color: white;
@@ -128,6 +128,50 @@
         font-size: 1.2rem;
     }
 }
+.language-selector {
+    position: absolute;
+    display: inline-block;
+    margin-left: 100px; /* Spațiu între logo și selectorul de limbă */
+    margin-right: 0px; /* Dacă vrei un mic spațiu între selectorul de limbă și meniul burger */
+margin-top: -4px;
+}
+
+.language-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    background-color: #0A2342;
+    border-radius: 5px;
+    top: 35px; /* Plasăm meniul mai jos față de buton */
+    right: 0;
+    width: 150px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.language-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.language-menu a:hover {
+    background-color: #333;
+}
+
+.language-selector.open .language-menu {
+    display: block;
+}
+
     </style>
 </head>
 
@@ -136,6 +180,14 @@
 <header>
     <div class="logo">
         <img src="imav-tech-logo-blue2.png" alt="IMAV Tech Logo" style="height: 50px;">
+    </div>
+	<div class="language-selector">
+        <button class="language-button" aria-label="Selectează limba">🌐</button>
+        <div class="language-menu">
+            <a href="index-ro.html">RO</a>
+            <a href="index-en.html">EN</a>
+            <a href="index-de.html">DE</a>
+        </div>
     </div>
     <button class="menu-toggle" aria-label="Deschide meniul">&#9776;</button>
     <nav class="nav-links">
@@ -237,6 +289,16 @@
     toggleButton.addEventListener('click', () => {
         navLinks.classList.toggle('show');
         toggleButton.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
+    });
+</script>
+<script>
+    const languageButton = document.querySelector('.language-button');
+    const languageMenu = document.querySelector('.language-menu');
+    const languageSelector = document.querySelector('.language-selector');
+
+    languageButton.addEventListener('click', () => {
+        // Schimbă vizibilitatea meniului
+        languageSelector.classList.toggle('open');
     });
 </script>
 </body>
