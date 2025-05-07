@@ -130,15 +130,7 @@
 }
     </style>
 </head>
-<script>
-    const toggleButton = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
 
-    toggleButton.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-        toggleButton.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
-    });
-</script>
 <body>
 
 <header>
@@ -238,6 +230,14 @@
 <footer>
     &copy; 2025 IMAV Tech. Toate drepturile rezervate.
 </footer>
+<script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        toggleButton.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
+    });
+</script>
 </body>
 </html>
