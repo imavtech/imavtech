@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAV Tech - Automatizări și Mentenanță</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #0A2342;
+        }
+        header {
+    background-color: #0A2342;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Asigurăm că toate elementele sunt aliniate pe axa verticală */
+    padding: 1rem 2rem;
+}
+        .logo {
+            font-weight: bold;
+            font-size: 0rem;
+            letter-spacing: 0px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .hero {
+            background-color: #e0e7ef;
+            text-align: center;
+            padding: 6rem 2rem;
+            border-bottom: 3px solid #0A2342;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .services, .team, .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service, .team-member, .project {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .service:hover, .team-member:hover, .project:hover {
+            transform: translateY(-5px);
+        }
+        .contact {
+            background-color: #0A2342;
+            color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .team-member img, .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+	    .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #0A2342;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    header {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+}
+.language-selector {
+    position: absolute;
+    display: inline-block;
+    margin-left: 100px; /* Spațiu între logo și selectorul de limbă */
+    margin-right: 0px; /* Dacă vrei un mic spațiu între selectorul de limbă și meniul burger */
+margin-top: -2px;
+}
+
+.language-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    background-color: #0A2342;
+    border-radius: 5px;
+    top: 35px; /* Plasăm meniul mai jos față de buton */
+    right: 0;
+    width: 150px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.language-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.language-menu a:hover {
+    background-color: #333;
+}
+
+.language-selector.open .language-menu {
+    display: block;
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="imav-tech-logo-blue2.png" alt="IMAV Tech Logo" style="height: 50px;">
+    </div>
+	<div class="language-selector">
+        <button class="language-button" aria-label="Selectează limba">🌐</button>
+        <div class="language-menu">
+            <a href="index-ro.html">RO</a>
+            <a href="index-en.html">EN</a>
+            <a href="index-de.html">DE</a>
+            <a href="index-tr.html">TR</a>
+            <a href="index-es.html">ES</a>
+            <a href="index-it.html">IT</a>
+        </div>
+    </div>
+    <button class="menu-toggle" aria-label="Deschide meniul">&#9776;</button>
+    <nav class="nav-links">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#proiecte">Proiecte</a>
+        <a href="#echipa">Echipa</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>IMAV Tech</h1>
+    <p>Automatizări industriale, mentenanță echipamente și consultanță tehnică de top.</p>
+</section>
+
+
+<section id="servicii">
+    <h2>Serviciile noastre</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Automatizări industriale</h3>
+            <p>Proiectăm și implementăm soluții automate adaptate nevoilor industriei moderne.</p>
+        </div>
+        <div class="service">
+            <h3>Mentenanță echipamente</h3>
+            <p>Asigurăm întreținerea preventivă și corectivă a echipamentelor industriale pentru minimizarea timpilor de oprire.</p>
+        </div>
+        <div class="service">
+            <h3>Consultanță în automatizări</h3>
+            <p>Oferim expertiză pentru optimizarea și digitalizarea fluxurilor de producție.</p>
+        </div>
+    </div>
+</section>
+
+<section id="proiecte">
+    <h2>Proiecte realizate</h2>
+    <div class="projects-gallery">
+        <div class="project">
+            <img src="https://electricianautomatizari.ro/wp-content/uploads/2014/10/linii-de-productie.png" alt="Sisteme Logistica">
+            <h3>Linie automatizată producție</h3>
+            <p>Automatizare completă a unei linii de producție industrială.</p>
+        </div>
+        <div class="project">
+            <img src="https://elmatic.ro/wp-content/uploads/slider/cache/73b93a3d0876e6bece37f3b4ebf6330a/WhatsApp-Image-2021-12-02-at-20.21.50-2.jpg" alt="Panouri electrice">
+            <h3>Modernizare panouri electrice</h3>
+            <p>Actualizare sisteme de control la standarde moderne.</p>
+        </div>
+        <div class="project">
+            <img src="https://www.mikrodev.com/wp-content/uploads/2024/03/What-is-SCADA-Who-Uses-it-and-How-SCADA-Has-Evolved-scaled.jpg" alt="Proicte SCADA">
+            <h3>Implementare SCADA</h3>
+            <p>Sistem SCADA personalizat pentru monitorizare și control industrial.</p>
+        </div>
+    </div>
+</section>
+
+<section id="echipa">
+    <h2>Echipa noastră</h2>
+    <div class="team">
+        <div class="team-member">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQG8ncRLQ8QCtA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718280781487?e=1751500800&v=beta&t=Z0-XrkCbMwefBYjZcARCrRQI5RcWaz7iLSX3LyCQ9m0" alt="Specialist Dezvoltare Sisteme Software Industriale">
+            <h3>Ionut Iancu</h3>
+            <p>Inginer specializat în automatizări industriale, cu peste 8 ani de experiență în programarea, integrarea și optimizarea sistemelor automate. Ionuț se remarcă prin soluții inovatoare și eficiență în fiecare proiect implementat.</p>
+        </div>
+        <div class="team-member">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHCv3iErWqmAw/profile-displayphoto-shrink_800_800/B4DZaAhad9GsAg-/0/1745912965530?e=1752105600&v=beta&t=FHx1PedFANn6BUdLnBMAlBs9K1v419EFr8nYuzth5o0" alt="Inginer Automatizări Senior">
+            <h3>Madalin Oancea</h3>
+            <p>Cu o experiență de 8 ani în domeniul automatizărilor, Mădălin este pasionat de dezvoltarea și perfecționarea sistemelor de control. Abordarea sa orientată spre detalii asigură implementări rapide și funcționale în orice mediu industrial.</p>
+        </div>
+        <div class="team-member">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQF9FHJsnVUGFg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683185175597?e=1751500800&v=beta&t=OctYeG57lPOka8JFDMqWp9747Dir_sgH6ZFG1Moo4y0" alt="Consultant Tehnic Automatizări și Procese Industriale">
+            <h3>Adrian Tudorachioiu</h3>
+            <p>Cu peste 14 ani de experiență în automatizarea proceselor și optimizarea fluxurilor industriale, Adrian aduce valoare prin expertiza sa tehnică și adaptabilitatea la provocările tehnologice moderne. Soluțiile propuse de el accelerează performanța operațională a clienților.</p>
+        </div>
+	<div class="team-member">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGncb0yzFd-MA/profile-displayphoto-shrink_800_800/B4DZZ86Mk6G8Ak-/0/1745852353582?e=1752105600&v=beta&t=V5wEIkgIz-K4iSmDOBl1qmVu5G5RYg06dRgsF1C823w" alt="Manager Proiecte Automatizare și Mentenanță">
+            <h3>Valentin Bobeica</h3>
+            <p>Expert cu 15 ani de experiență în dezvoltarea de sisteme software industriale, conducerea echipelor de mentenanță și automatizări. Valentin contribuie decisiv la optimizarea proceselor de producție, combinând viziunea tehnică cu leadership-ul eficient.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+        <p><strong>Adresă:</strong> Strada Matei Basarab 60, Târgoviște</p>
+        <p><strong>Telefon:</strong> <a href="tel:+40757963289" style="color: white;">+40757 963 289</a></p>
+        <p><strong>Email:</strong> <a href="mailto:imavtechnologies@gmail.com" style="color: white;">imavtechnologies@gmail.com</a></p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 IMAV Tech. Toate drepturile rezervate.
+</footer>
+<script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        toggleButton.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
+    });
+</script>
+<script>
+    const languageButton = document.querySelector('.language-button');
+    const languageMenu = document.querySelector('.language-menu');
+    const languageSelector = document.querySelector('.language-selector');
+
+    languageButton.addEventListener('click', () => {
+        // Schimbă vizibilitatea meniului
+        languageSelector.classList.toggle('open');
+    });
+</script>
+</body>
+</html>
